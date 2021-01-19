@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIWIKODE - Sistem Informasi Wisata Kota Depok</title>
+
+    <link rel="stylesheet" href="asset/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="asset/css/style.css">
+</head>
+<body>
+    <header class="bg-main mb-4">
+        <h1 class="text-center pt-3">Sistem Informasi Wisata Kota Depok - SIWIKODE</h1>
+        <nav class="navbar navbar-expand-lg navbar-light pb-3">
+            <a class="navbar-brand" href="#">SIWIKODE</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="./index.html">Home</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="./daftar_wisata_rekreasi.html">Wisata Rekreasi</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./daftar_wisata_kuliner.html">Wisata Kuliner</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./registrasi_wisata_rekreasi.html">Registrasi</a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <a href="./login.html" class="btn btn-info text-white my-2 my-sm-0" type="submit">Login</a>
+              </form>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-fluid">
+        <!-- Konten dari sini -->
+        <section>
+            <div id="login" class="mb-4">
+                <h3 class="text-center text-white">Login form</h3>
+                <div class="container">
+                    <div id="login-row" class="row justify-content-center align-items-center">
+                        <div id="login-column" class="col-md-6">
+                            <div id="login-box" class="col-md-12">
+                                <form id="login-form" class="form" action="" method="post">
+                                    <h3 class="text-center text-dark">Login</h3>
+                                    <div class="form-group">
+                                        <label for="username" class="text-dark">Username:</label><br>
+                                        <input type="text" name="username" id="username" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password" class="text-dark">Password:</label><br>
+                                        <input type="text" name="password" id="password" class="form-control">
+                                    </div>
+                                    <div class="form-group text-center">
+                                        <input type="submit" name="submit" class="btn btn-info btn-md" value="Sign In">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Sampai sini -->
+
+        <hr>
+
+        <footer>
+            Develop By Mahasiswa @STT-NF 2021
+        </footer>
+    </div>
+
+    <script src="asset/jquery/jquery-3.2.1.slim.min.js"></script>
+    <script src="asset/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+    </script>
+</body>
+</html>
