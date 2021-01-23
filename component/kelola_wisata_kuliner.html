@@ -1,0 +1,180 @@
+<section>
+    <nav class="float-right" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="./admin.html">Admin</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Kelola Wisata Kuliner</li>
+        </ol>
+    </nav>
+</section>
+
+<!-- Konten dari sini -->
+<section>
+    <fieldset class="custom w-100">
+        <legend class="custom"> Kelola Data Wisata Kuliner</legend>
+        <table class="table table-bordered text-center">
+            <thead class="bg-sec">
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Jenis Wisata</th>
+                    <th>Rating</th>
+                    <th>Kontak Person</th>
+                    <th>Upload Foto</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1.</td>
+                    <td>Sop Duren Margonda</td>
+                    <td>Jajanan</td>
+                    <td>4.3</td>
+                    <td>0813-6927-0571</td>
+                    <td><a href="assets/img/sop-duren.jpg" target="_blank">Link upload</a></td>
+                    <td class="text-center">
+                        <a target="_blank" href="?q=detail_wisata_kuliner" class="btn btn-secondary"><i class="fa fa-eye"></i></a>
+                        <a href="javascript:;" class="btn btn-primary" onclick="show_modal('Edit')"><i class="fa fa-edit"></i></a>
+                        <a href="javascript:;" class="btn btn-danger" data-toggle="modal" data-target="#deleteForm"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td>Waroeng SS Spesial Sambal</td>
+                    <td>Rumah Makan</td>
+                    <td>4.6</td>
+                    <td>(021) 77201492</td>
+                    <td><a href="assets/img/waroeng.jpg" target="_blank">Link upload</a></td>
+                    <td class="text-center">
+                        <a target="_blank" href="?q=detail_wisata_kuliner" class="btn btn-secondary"><i class="fa fa-eye"></i></a>
+                        <a href="javascript:;" class="btn btn-primary" onclick="show_modal('Edit')"><i class="fa fa-edit"></i></a>
+                        <a href="javascript:;" class="btn btn-danger" data-toggle="modal" data-target="#deleteForm"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3.</td>
+                    <td>Soto Bu Tjondro</td>
+                    <td>Rumah Makan</td>
+                    <td>4.8</td>
+                    <td>(021) 77216161</td>
+                    <td><a href="assets/img/soto.jpg" target="_blank">Link upload</a></td>
+                    <td class="text-center">
+                        <a href="javascript:;" class="btn btn-secondary"><i class="fa fa-eye"></i></a>
+                        <a href="javascript:;" class="btn btn-primary" onclick="show_modal('Edit')"><i class="fa fa-edit"></i></a>
+                        <a href="javascript:;" class="btn btn-danger" data-toggle="modal" data-target="#deleteForm"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="javascript:;" class="btn btn-primary" onclick="show_modal('Tambah')"><i class="fa fa-plus"></i> Tambah Baru</a>
+    </fieldset>
+</section>
+
+<div class="modal fade" id="formData" tabindex="-1" role="dialog" aria-labelledby="formDataLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="formDataLabel">Form Edit Wisata Kuliner</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="POST" id="form">
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="nama">Nama Tempat Wisata</label>
+                    <input type="text" class="form-control" id="nama">
+                    <span class="text-danger text-validation" id="text_nama"></span>
+                </div>
+                <div class="form-group">
+                    <label for="jenis">Jenis Wisata</label>
+                    <select id="jenis" class="form-control">
+                        <option>Kedai Kopi</option>
+                        <option>Rumah Makan</option>
+                        <option>Jajanan</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="deskripsi">Deskripsi Wisata</label>
+                    <textarea id="deskripsi" class="form-control"></textarea>
+                    <span class="text-danger text-validation" id="text_deskripsi"></span>
+                </div>
+                <div class="form-group">
+                    <label for="kontak">Kontak Person</label>
+                    <input type="text" class="form-control" id="kontak">
+                    <span class="text-danger text-validation" id="text_kontak"></span>
+                </div>
+                <div class="form-group">
+                    <label for="no_hp">No. HP/Telpon</label>
+                    <input type="text" class="form-control" id="no_hp">
+                    <span class="text-danger text-validation" id="text_no_hp"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email">
+                    <span class="text-danger text-validation" id="text_email"></span>
+                </div>
+                <div class="form-group">
+                    <label for="web">Alamat Web</label>
+                    <input type="text" class="form-control" id="web" value="http://">
+                    <span class="text-danger text-validation" id="text_web"></span>
+                </div>
+                <div class="form-group">
+                    <label for="alamat">Alamat Lengkap</label>
+                    <textarea id="alamat" class="form-control"></textarea>
+                    <span class="text-danger text-validation" id="text_alamat"></span>
+                </div>
+                <div class="form-group">
+                    <label for="ll">Latitude,Longitude</label>
+                    <input type="text" class="form-control" id="ll">
+                    <span class="text-danger text-validation" id="text_ll"></span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="btnForm" onclick="save()"><i class="fa fa-check"></i> Edit</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="deleteForm" tabindex="-1" role="dialog" aria-labelledby="deleteFormLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteFormLabel">Hapus Wisata Kuliner</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Yakin hapus wisata ini?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="toastr.success('Berhasil menghapus data!')"><i class="fa fa-trash"></i> Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let msg = ''
+    function show_modal(type='Tambah') {
+        $('#formDataLabel').text(`Form ${type} Wisata Kuliner`)
+        $('#btnForm').html('<i class="fa fa-check"></i> ' + type)
+        $('#formData').modal('show')
+        $('.text-validation').html('')
+        $('#form')[0].reset()
+
+        if (type == 'Tambah') {
+            msg = 'Berhasil menambahkan data!'
+        } else {
+            msg = 'Berhasil mengubah data!'
+        }
+    }
+
+    function save() {
+        validasi('modal', msg)
+    }
+</script>

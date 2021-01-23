@@ -1,85 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIWIKODE - Sistem Informasi Wisata Kota Depok</title>
 
-    <link rel="stylesheet" href="asset/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/toastr/toastr.min.css">
 </head>
-<body>
-    <header class="bg-main mb-4">
-        <h1 class="text-center pt-3">Sistem Informasi Wisata Kota Depok - SIWIKODE</h1>
-        <nav class="navbar navbar-expand-lg navbar-light pb-3">
-            <a class="navbar-brand" href="#">SIWIKODE</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link" href="./index.html">Home</a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="./daftar_wisata_rekreasi.html">Wisata Rekreasi</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./daftar_wisata_kuliner.html">Wisata Kuliner</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./registrasi_wisata_rekreasi.html">Registrasi</a>
-                </li>
-              </ul>
-              <form class="form-inline my-2 my-lg-0">
-                <a href="./login.html" class="btn btn-info text-white my-2 my-sm-0" type="submit">Login</a>
-              </form>
-            </div>
-        </nav>
-    </header>
 
-    <div class="container-fluid">
-        <!-- Konten dari sini -->
-        <section>
-            <div id="login" class="mb-4">
-                <h3 class="text-center text-white">Login form</h3>
-                <div class="container">
-                    <div id="login-row" class="row justify-content-center align-items-center">
-                        <div id="login-column" class="col-md-6">
-                            <div id="login-box" class="col-md-12">
-                                <form id="login-form" class="form" action="" method="post">
-                                    <h3 class="text-center text-dark">Login</h3>
-                                    <div class="form-group">
-                                        <label for="username" class="text-dark">Username:</label><br>
-                                        <input type="text" name="username" id="username" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password" class="text-dark">Password:</label><br>
-                                        <input type="text" name="password" id="password" class="form-control">
-                                    </div>
-                                    <div class="form-group text-center">
-                                        <input type="submit" name="submit" class="btn btn-info btn-md" value="Sign In">
-                                    </div>
-                                </form>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin my-5">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Sign In</h5>
+                        <form class="form-signin" method="POST">
+                            <div class="form-label-group">
+                                <input type="text" id="username" class="form-control" placeholder="Username" autofocus autocomplete="off">
+                                <label for="username">Username</label>
+                                <span class="text-danger text-validation" id="text_username"></span>
                             </div>
-                        </div>
+
+                            <div class="form-label-group">
+                                <input type="password" id="password" class="form-control" placeholder="Password">
+                                <label for="password">Password</label>
+                                <span class="text-danger text-validation" id="text_password"></span>
+                            </div>
+
+                            <div class="custom-control custom-checkbox mb-3">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                <label class="custom-control-label" for="customCheck1">Keep me Signed In</label>
+                            </div>
+                            <button type="button" class="btn btn-lg btn-info btn-block text-uppercase" id="btn-login">Signin</button>
+                        </form>
                     </div>
                 </div>
+                <center>
+                    <p class="text-last">Develop By Rev @STT-NF 2021</p>
+                </center>
             </div>
-        </section>
-        <!-- Sampai sini -->
-
-        <hr>
-
-        <footer>
-            Develop By Mahasiswa @STT-NF 2021
-        </footer>
+        </div>
     </div>
 
-    <script src="asset/jquery/jquery-3.2.1.slim.min.js"></script>
-    <script src="asset/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/jquery/jquery-3.2.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/toastr/toastr.min.js"></script>
     <script>
+        $('#btn-login').click(function() {
+            let username = $('#username').val();
+            let password = $('#password').val();
+
+            $('.text-validation').removeClass('ml-3').html('')
+
+            let isValid = true
+            if (username == '') {
+                isValid = false
+                $('#text_username').addClass('ml-3').html('Wajib diisi')
+            }
+
+            if (password == '') {
+                isValid = false
+                $('#text_password').addClass('ml-3').html('Wajib diisi')
+            }
+
+            if (isValid) {
+                if (username == 'admin' && password == '123456') {
+                    toastr.success('Berhasil login!')
+                    setTimeout(() => {
+                        window.location = 'admin.html'
+                    }, 2000);
+                } else {
+                    toastr.warning('Username atau password salah!')
+                }
+            }
+        })
     </script>
 </body>
+
 </html>
