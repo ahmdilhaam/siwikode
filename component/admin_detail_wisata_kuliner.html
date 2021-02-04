@@ -15,7 +15,6 @@
 <!-- Konten dari sini -->
 <section>
     <h3>Detail Wisata Kuliner Sop Duren Margonda</h3>
-    <button class="btn btn-primary" id="show-testimoni"><i class="fa fa-plus"></i> Tulis Testimoni</button><br><br>
     <div class="row">
         <div class="col-md-12">
             <div class="card bg-sec mb-3">
@@ -123,50 +122,3 @@
         </div>
     </div>
 </section>
-
-<div class="modal fade" id="formData" tabindex="-1" role="dialog" aria-labelledby="formDataLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="formDataLabel">Testimoni Sop Duren Margonda</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form action="POST" id="form">
-            <div class="modal-body">
-                <div class="form-group">
-                    <label for="nama">Nama Kamu</label>
-                    <input type="text" class="form-control" id="nama">
-                    <span class="text-danger text-validation" id="text_nama"></span>
-                </div>
-                <div class="form-group">
-                    <label for="nama">Email</label>
-                    <input type="email" class="form-control" id="email">
-                    <span class="text-danger text-validation" id="text_email"></span>
-                </div>
-                <div class="form-group">
-                    <label for="nama">Rating</label>
-                    <input type="number" class="form-control" id="rating" max="5" placeholder="Contoh: 4.5/4.8">
-                    <span class="text-danger text-validation" id="text_rating"></span>
-                </div>
-                <div class="form-group">
-                    <label for="komentar">Komentar</label>
-                    <textarea id="komentar" class="form-control"></textarea>
-                    <span class="text-danger text-validation" id="kext_Komentar"></span>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="btnForm" onclick="save()"><i class="fa fa-check"></i> Kirim</button>
-            </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-<script>
-    $('#show-testimoni').click(function() {
-        $('#formData').modal('show')
-    })
-</script>
