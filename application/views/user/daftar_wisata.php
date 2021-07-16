@@ -15,9 +15,10 @@
         <div class="card-body">
             <div class="row">
                 <?php foreach ($daftar_wisata as $key => $value) { ?>
+                <?php $rating   = round($value->bintang, 1) ?>
                 <div class="<?=$key > 0 ? 'col-md-6' : 'col-md-12'?>">
                     <div class="card bg-sec mb-3">
-                        <div class="card-header"><?=$value->nama?></div>
+                        <div class="card-header"><?=ucwords($value->nama)?> (<i class="fa fa-star" style="color: #e3e302;"></i><?=$rating?>)</div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-4 d-flex justify-content-center">

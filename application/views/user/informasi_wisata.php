@@ -4,7 +4,7 @@
             <ol class="breadcrumb mb-0">
                 <li class="breadcrumb-item"><a href="<?=base_url()?>">Beranda</a></li>
                 <li class="breadcrumb-item" aria-current="page"><a href="<?=base_url('beranda/daftar-wisata/'.$menu_active);?>">Wisata <?=ucfirst($menu_active)?></a></li>
-                <li class="breadcrumb-item active" aria-current="page"><?=$detail->nama?></li>
+                <li class="breadcrumb-item active" aria-current="page"><?=ucwords($detail->nama)?></li>
             </ol>
         </nav>
     </div>
@@ -14,8 +14,8 @@
 </div>
 <!-- Konten dari sini -->
 <section>
-    <h3>Informasi Wisata <?=ucfirst($menu_active)?> <?=$detail->nama?> (<i class="fa fa-star" style="color: #e3e302;"></i><?=$rating?>)</h3>
-    <button class="btn btn-primary" id="show-testimoni" data-name="<?=$detail->nama?>"><i class="fa fa-plus"></i> Tulis Testimoni</button><br><br>
+    <h3>Informasi Wisata <?=ucfirst($menu_active)?> <?=ucwords($detail->nama)?> (<i class="fa fa-star" style="color: #e3e302;"></i><?=$rating?>)</h3>
+    <button class="btn btn-primary" id="show-testimoni" data-name="<?=ucwords($detail->nama)?>"><i class="fa fa-plus"></i> Tulis Testimoni</button><br><br>
     <div class="row">
         <div class="col-md-12">
             <div class="card bg-sec mb-3">

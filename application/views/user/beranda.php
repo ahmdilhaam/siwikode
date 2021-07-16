@@ -5,9 +5,10 @@
     </h3>
     <div class="row">
         <?php foreach ($beranda as $key => $value) { ?>
+        <?php $rating   = round($value->bintang, 1) ?>
         <div class="col-md-4">
             <div class="card bg-sec mb-3">
-                <div class="card-header"><?=$value->nama?></div>
+                <div class="card-header"><?=ucwords($value->nama)?> (<i class="fa fa-star" style="color: #e3e302;"></i><?=$rating?>)</div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-4 d-flex justify-content-center">

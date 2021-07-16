@@ -16,7 +16,7 @@ class Beranda extends CI_Controller {
 
 	public function index()
 	{
-		$order = ['bintang' => 'DESC', 'updated_date' => 'DESC'];
+		$order = ['bintang' => 'DESC', 'nama' => 'ASC'];
 		$data['beranda'] = $this->m_wisata->get(['status' => 'valid'], $order, [], null, 1, 3);
 		$data['menu_active'] = 'beranda';
 		$data['view'] = 'user/beranda';
@@ -95,7 +95,7 @@ class Beranda extends CI_Controller {
 		if ($this->input->method(TRUE) == 'POST') {
 			$nama		= $this->input->post('nama');
 			$slug		= strtolower(str_replace(' ', '-', $nama));
-			$jenis		= $this->input->post('jenis');
+			$jenis_id	= $this->input->post('jenis');
 			$tentang	= $this->input->post('tentang');
 			$deskripsi	= $this->input->post('deskripsi');
 			$kontak		= $this->input->post('kontak');
@@ -116,9 +116,9 @@ class Beranda extends CI_Controller {
 				'latlong' => $latlong,
 			];
 			if ($jenis == 'rekreasi') {
-				$data['jenis_rekreasi_id']	= $jenis;
+				$data['jenis_rekreasi_id']	= $jenis_id;
 			} else {
-				$data['jenis_kuliner_id']	= $jenis;
+				$data['jenis_kuliner_id']	= $jenis_id;
 			}
 			if ($this->m_wisata->save($data)) {
 
@@ -139,7 +139,7 @@ class Beranda extends CI_Controller {
 						$_FILES['file']['size'] = $_FILES['files']['size'][$i];
 						$config['upload_path'] = $dir;
 						$config['allowed_types'] = 'jpg|jpeg|png|gif';
-						$config['max_size'] = '5000';
+						$config['max_size'] = '20000';
 						$config['file_name'] = $slug.'-'.$i;
 	
 						$this->load->library('upload', $config); 

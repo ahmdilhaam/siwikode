@@ -15,7 +15,7 @@
     <header class="bg-main mb-4">
         <h1 class="text-center pt-3">Sistem Informasi Wisata Kota Depok</h1>
         <nav class="navbar navbar-expand-lg navbar-light bg-main pb-3">
-            <a class="navbar-brand" href="./index.html"><strong>SIWI</strong>KODE</a>
+            <a class="navbar-brand" href="<?=base_url()?>"><strong>SIWI</strong>KODE</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
